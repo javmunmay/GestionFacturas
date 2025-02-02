@@ -8,7 +8,7 @@ import { DetalleFactura } from '../modelos/detalle-factura';
 })
 export class FacturaService {
 
-  private url: string = "../../../BACKEND/servidor.php";
+  private url: string = "https://41095220.servicio-online.net/APIGestionFacturas/servidor.php";
 
 
   constructor(private http: HttpClient) { }
