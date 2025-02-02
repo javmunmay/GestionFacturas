@@ -1,0 +1,30 @@
+
+<div class="container-fluid">
+        
+    <p>Para ver la lista de productos pinche en el número de la factura correspondiente</p>
+  
+    <div class="table table-bordered">
+        <table border="1">
+          <thead>
+            <tr class="table-primary">
+              <th>ID</th>
+              <th>NUMERO</th>
+              <th>Cliente</th>
+              <th>FECHA</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (factura of listaFactura; track $index){
+                <tr>
+                    <td>{{ factura.id }}</td>
+                    <td><a [routerLink]="['/facturaInfo-add/', factura.id, factura.numero]">{{ factura.numero }}</a></td>
+                    <td>{{ factura.id_cliente}}</td>
+                    <td>{{ factura.fecha | date }}</td>
+            
+                </tr>
+            }
+            
+          </tbody>
+        </table>
+      </div>
+  </div>

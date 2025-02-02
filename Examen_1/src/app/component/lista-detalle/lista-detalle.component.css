@@ -1,0 +1,242 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #343a40; /* Color de texto */
+    line-height: 1.6;
+  }
+  
+  /* Estilo para los títulos */
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #212529;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilo para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 2px solid #007bff; /* BORDE AZUL OSCURO */
+  }
+  
+  .table thead {
+    background-color: #007bff; /* Azul oscuro */
+    color: #fff;
+  }
+  
+  .table thead th {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #e9ecef; /* Separador entre filas */
+  }
+  
+  .table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  .table tbody td {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    color: #495057;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f8f9fa; /* Resaltado al pasar el mouse */
+  }
+  
+  /* Estilo para la fila de totales */
+  .table tbody tr.totales {
+    font-weight: bold;
+    background-color: #e9ecef;
+    border-top: 2px solid #dee2e6;
+    border-bottom: 2px solid #007bff; /* BORDE INFERIOR AZUL OSCURO */
+  }
+  
+  .table tbody tr.totales td {
+    text-align: right;
+  }
+  
+  .table tbody tr.totales td:first-child {
+    text-align: left;
+  }
+  
+  /* Estilo para la fila de totales */
+  .table tbody tr.totales {
+    font-weight: bold;
+    background-color: #e9ecef;
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table tbody tr.totales td {
+    text-align: right;
+  }
+  
+  .table tbody tr.totales td:first-child {
+    text-align: left;
+  }
+  
+  /* Estilo para los botones */
+  button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff; /* Azul oscuro */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+  }
+  
+  button.btn-danger {
+    background-color: #dc3545; /* Rojo */
+  }
+  
+  button.btn-danger:hover {
+    background-color: #e74505; /* Rojo más oscuro */
+  }
+
+  button.btn-warning {
+    background-color: #f3a807; /* Rojo */
+  }
+  
+  button.btn-warning:hover {
+    background-color: #965000; /* Rojo más oscuro */
+  }
+  
+  button + button {
+    margin-left: 10px;
+  }
+  
+  /* Estilo para el formulario */
+  #formDetalle {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  form input[type="number"],
+  form input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  form input[type="hidden"] {
+    display: none;
+  }
+  
+  form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #28a745; /* Verde */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button[type="submit"]:disabled {
+    background-color: #ced4da;
+    cursor: not-allowed;
+  }
+  
+  form button[type="submit"]:not(:disabled):hover {
+    background-color: #218838; /* Verde más oscuro */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .table thead {
+      display: none;
+    }
+  
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .table tbody td {
+      padding: 10px;
+      text-align: right;
+      position: relative;
+    }
+  
+    .table tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      color: #6c757d;
+    }
+  }

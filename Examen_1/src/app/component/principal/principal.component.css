@@ -1,0 +1,118 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #343a40; /* Color de texto */
+    line-height: 1.6;
+  }
+  
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilo para el título */
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  /* Estilo para la tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .table thead {
+    background-color: #007bff; /* Azul oscuro */
+    color: #fff;
+  }
+  
+  .table thead th {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  .table tbody td {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    color: #495057;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f8f9fa; /* Resaltado al pasar el mouse */
+  }
+  
+  /* Estilo para enlaces (números de factura) */
+  .table tbody td a {
+    color: #007bff; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .table tbody td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para celdas específicas */
+  .table tbody td:nth-child(3) {
+    font-style: italic; /* Estilo para el campo "Cliente" */
+  }
+  
+  .table tbody td:nth-child(4) {
+    color: #28a745; /* Verde para la fecha */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .table thead {
+      display: none;
+    }
+  
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .table tbody td {
+      padding: 10px;
+      text-align: right;
+      position: relative;
+    }
+  
+    .table tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      color: #6c757d;
+    }
+  }

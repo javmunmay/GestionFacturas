@@ -1,0 +1,99 @@
+
+<h1>Gestion de Facturas</h1>
+
+<h2>Detalle de la Factura {{ numeroFactura }}</h2>
+  
+<br><br>
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CANTIDAD</th>
+            <th>CONCEPTO</th>
+            <th>PRECIO</th>
+            <th>Tipo IVA</th>
+            <th>IVA</th>
+            <th>TOTAL</th>
+            <th>EDITAR</th>
+            <th>BORRAR</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (detalle of detallesFactura; track $index){
+            <tr>
+                <td>{{ detalle.id }}</td>
+                <td>{{ detalle.cantidad | number }}</td>
+                <td>{{ detalle.concepto }}</td>
+                <td>{{ detalle.precio }}</td>
+                <td>{{ detalle.tipo_iva }}</td>
+                <td>{{ detalle.iva }}</td>
+                <td>{{ detalle.total }}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="abrirCerrarFormulario(1, detalle)">Editar</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="eliminarDetalle(detalle.id, detalle.id_factura)">Eliminar</button>
+                </td>
+            </tr>
+        }
+        
+
+        <!-- Fila de totales -->
+        <tr class="totales">
+            <td colspan="5">Totales</td>
+            <td>{{ totalIVA | number }}</td>
+            <td>{{ totalGeneral | number}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<tr>
+    <td>
+        <button routerLink="/">Volver</button>
+        <span> | </span>
+        <button (click)="abrirCerrarFormulario(0,detalleFactura)"> <!-- 0 es añadir -->
+            Nuevo Detalle
+        </button>
+    </td>
+</tr>
+
+<br><br>
+
+@if (mostrarFormulario){
+<div id="formDetalle">
+    <fieldset>
+        <legend>Añadir Detalle</legend>
+        <br>
+        <form #formDetalle="ngForm" (ngSubmit)="onSubmit(formDetalle.value)">
+      
+            <label for="cantidad">CANTIDAD </label>
+            <input type="number" id="cantidad" name="cantidad" [(ngModel)]="detalleFactura.cantidad" required>
+            <br><br> <!-- Usa el concept dentro de name para sarle al valor en este caso detalleFactura -->
+        
+            <label for="concepto">CONCEPTO </label>
+            <input type="text" id="concepto" name="concepto" [(ngModel)]="detalleFactura.concepto" required>
+            <br><br>
+        
+            <label for="precio">PRECIO </label>
+            <input type="number" id="precio" name="precio" [(ngModel)]="detalleFactura.precio" required> €
+            <br><br>
+        
+            <label for="tipo_iva">Tipo IVA </label>
+            <input type="number" id="tipo_iva" name="tipo_iva" [(ngModel)]="detalleFactura.tipo_iva" required> %
+            <br><br>
+        
+            <input type="hidden" id="id" name="id" [(ngModel)]="detalleFactura.id">
+            <button type="submit" [disabled]="!formDetalle.valid">{{textoBoton}}</button>
+            
+          </form>
+    </fieldset>
+   
+        
+    
+    
+</div>
+}
