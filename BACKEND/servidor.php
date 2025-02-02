@@ -8,7 +8,7 @@ header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, X-Re
 header('Content-Type: application/json');  //  Todo se devolverá en formato JSON.
 
 
-$conn = Conectar2("ajax", "root", "");
+$conn = Conectar2("10718674_Gestionfacturas", "Javier", "u70q0Z2p@");
  
 //  Con esta línea recogemos los datos (en formato JSON), enviados por el cliente:
 $datos = file_get_contents('php://input');  //  $datos es un string, y no un objeto php
@@ -95,7 +95,7 @@ function modificaDetalle($objeto){
 function conectar2($bd, $usuario, $clave) {
   try {
       $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-      @$bd = new PDO('mysql:host=localhost;dbname='. $bd, $usuario, $clave, $opciones);
+      @$bd = new PDO('mysql:host=PMYSQL181.dns-servicio.com:3306;dbname='. $bd, $usuario, $clave, $opciones);
       $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //aquí le digo que voy a utilizar excepciones
       return $bd;
   } catch (PDOException $e) {
