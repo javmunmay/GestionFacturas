@@ -8,7 +8,7 @@ import { DetalleFactura } from '../modelos/detalle-factura';
 })
 export class FacturaService {
 
-  private url: string = "http://localhost/CLASE/CLIENTE/7-%20Angular/Examen%201%20SEGUNDA%20Evaluaci%c3%b3n/Para_Alumnado/servidor.php";
+  private url: string = "../../../BACKEND/servidor.php";
 
 
   constructor(private http: HttpClient) { }
